@@ -466,6 +466,192 @@ const styles = `
   }
 
   .meta-val { color: #5a6b60; font-variant-numeric: tabular-nums; }
+
+  .final-btn {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #2a4a35;
+    border-radius: 8px;
+    padding: 11px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #4ade80;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.15s, border-color 0.15s;
+    margin-top: 10px;
+    letter-spacing: 0.01em;
+  }
+
+  .final-btn:hover { background: #0e1a12; border-color: #3a6a45; }
+  .final-btn:active { transform: scale(0.99); }
+  .final-btn:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
+
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+  }
+
+  .modal {
+    background: #111614;
+    border: 1px solid #1e2420;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 540px;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-header {
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid #1a1f1d;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .modal-header-text {}
+  .modal-title { font-family: 'DM Serif Display', serif; font-size: 18px; color: #f0f4f1; font-weight: 400; margin-bottom: 3px; }
+  .modal-subtitle { font-size: 12px; color: #4a5a50; line-height: 1.4; }
+
+  .modal-close {
+    background: #1a1f1d;
+    border: 1px solid #222a25;
+    border-radius: 6px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #5a6b60;
+    flex-shrink: 0;
+    transition: background 0.1s;
+  }
+  .modal-close:hover { background: #222a25; color: #c8d4cc; }
+
+  .modal-body { padding: 20px 24px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+
+  .modal-field { display: flex; flex-direction: column; gap: 5px; }
+  .modal-label { font-size: 11px; font-weight: 500; color: #5a6b60; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  .modal-field input[type="email"],
+  .modal-field input[type="text"],
+  .modal-field textarea {
+    background: #0c0f0e;
+    border: 1px solid #1e2420;
+    border-radius: 7px;
+    padding: 9px 12px;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    color: #e8ebe9;
+    outline: none;
+    transition: border-color 0.15s;
+    width: 100%;
+    resize: none;
+  }
+
+  .modal-field input:focus, .modal-field textarea:focus {
+    border-color: #2a4a35;
+    box-shadow: 0 0 0 3px rgba(74,222,128,0.06);
+  }
+
+  .modal-preview {
+    background: #0c0f0e;
+    border: 1px solid #1a1f1d;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 12px;
+    color: #8a9e90;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    max-height: 220px;
+    overflow-y: auto;
+  }
+
+  .modal-preview-label {
+    font-size: 10px;
+    color: #3a4a3f;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .modal-footer {
+    padding: 16px 24px;
+    border-top: 1px solid #1a1f1d;
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .modal-send-btn {
+    flex: 1;
+    background: #16a34a;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.15s;
+  }
+  .modal-send-btn:hover { background: #15803d; }
+  .modal-send-btn:disabled { background: #1a2420; color: #3a4a3f; cursor: not-allowed; }
+
+  .modal-cancel-btn {
+    background: transparent;
+    border: 1px solid #1e2420;
+    border-radius: 8px;
+    padding: 11px 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: #5a6b60;
+    cursor: pointer;
+    transition: border-color 0.1s, color 0.1s;
+  }
+  .modal-cancel-btn:hover { border-color: #2a3a30; color: #c8d4cc; }
+
+  .modal-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 32px 24px;
+    gap: 10px;
+  }
+  .modal-success-icon { font-size: 36px; }
+  .modal-success-title { font-family: 'DM Serif Display', serif; font-size: 18px; color: #4ade80; }
+  .modal-success-text { font-size: 12px; color: #4a5a50; line-height: 1.5; }
+
+  .final-loading-note {
+    font-size: 11px;
+    color: #3a4a3f;
+    text-align: center;
+    margin-top: 6px;
+  }
 `;
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
@@ -584,6 +770,13 @@ export default function MotorRatingApp() {
   const [result, setResult] = useState(null);
   const [quoteError, setQuoteError] = useState(null);
   const [dynamicUpdating, setDynamicUpdating] = useState(false);
+  const [finalQuoting, setFinalQuoting] = useState(false);
+  const [finalResult, setFinalResult] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [emailTo, setEmailTo] = useState("");
+  const [emailSubject, setEmailSubject] = useState("");
+  const [emailSending, setEmailSending] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
 
   // ── Load initial validations on mount ──
   useEffect(() => {
@@ -688,7 +881,7 @@ export default function MotorRatingApp() {
           request_meta: {
             version_id: null,
             transaction_date: null,
-            call_purpose: "Motor Rating Demo",
+            call_purpose: "Get Quote",
             source_system: "spark-integration-demo",
             correlation_id: null,
             service_category: "All",
@@ -708,7 +901,134 @@ export default function MotorRatingApp() {
     }
   };
 
-  // ── Grouped field keys ──
+  // ── Final Quotation: re-call with call_purpose = Final Quotations, then open modal ──
+  const handleFinalQuotation = async () => {
+    setFinalQuoting(true);
+    try {
+      const cleanInputs = Object.fromEntries(
+        Object.entries(inputs).map(([k, v]) => [k, v === "" ? null : v])
+      );
+      const res = await fetch(EXECUTE_URL, {
+        method: "POST",
+        headers: HEADERS,
+        body: JSON.stringify({
+          request_data: { inputs: cleanInputs },
+          request_meta: {
+            version_id: null,
+            transaction_date: null,
+            call_purpose: "Final Quotations",
+            source_system: "spark-integration-demo",
+            correlation_id: null,
+            service_category: "All",
+            requested_output: null,
+          },
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.error?.message || `HTTP ${res.status}`);
+      const outputs = data?.response_data?.outputs ?? data?.outputs;
+      if (!outputs) throw new Error("No outputs returned.");
+      const finalData = { outputs, meta: data?.response_meta };
+      setFinalResult(finalData);
+
+      const firstName = inputs.E02_FirstName || "";
+      const sureName  = inputs.E03_SureName || "";
+      const name = [firstName, sureName].filter(Boolean).join(" ") || "Customer";
+      setEmailSubject(`Motor Insurance — Final Quotation for ${name} | Ref: ${(data?.response_meta?.call_id || "").substring(0,8).toUpperCase()}`);
+      setEmailSent(false);
+      setShowModal(true);
+    } catch (e) {
+      setQuoteError("Final Quotation error: " + e.message);
+    } finally {
+      setFinalQuoting(false);
+    }
+  };
+
+  // ── Build email body from inputs + outputs ──
+  const buildEmailBody = (fr) => {
+    if (!fr) return "";
+    const o = fr.outputs;
+    const addonsSelected = [
+      inputs.D01_Addon_1 === "Y" ? "Personal Accident per Person ($3,000)" : null,
+      inputs.D02_Addon_2 === "Y" ? "Hospital Benefit ($2,000)" : null,
+      inputs.D03_Addon_3 === "Y" ? "Natural Perils – Flood, Quake, Hail ($1,000)" : null,
+      inputs.D04_Addon_4 === "Y" ? "Roadside Assistance (Included)" : null,
+      inputs.D05_Addon_5 === "Y" ? "Motor Warranty Cover ($2,500)" : null,
+    ].filter(Boolean);
+
+    const firstName = inputs.E02_FirstName || "";
+    const sureName  = inputs.E03_SureName || "";
+    const name = [firstName, sureName].filter(Boolean).join(" ") || "Customer";
+
+    return `Dear ${name},
+
+Thank you for your interest in motor insurance coverage. Please find below your final quotation, prepared using our Coherent Spark rating engine.
+
+──────────────────────────────
+POLICYHOLDER DETAILS
+──────────────────────────────
+Name:                  ${name}
+Date of Birth (PH):    ${inputs.B01_PH_DOB || "-"}
+Gender (PH):           ${inputs.B03_PH_Gender === "M" ? "Male" : inputs.B03_PH_Gender === "F" ? "Female" : "-"}
+Additional Driver DOB: ${inputs.B02_Additional_Driver_DOB || "-"}
+Additional Driver:     ${inputs.B04_Additional_Driver_Gender === "M" ? "Male" : inputs.B04_Additional_Driver_Gender === "F" ? "Female" : "-"}
+Home Address:          ${inputs.B05_Home_Address || "-"}
+
+──────────────────────────────
+VEHICLE DETAILS
+──────────────────────────────
+Vehicle Group:         ${inputs.A01_Vehicle_Group ?? "-"}
+Manufacture Year:      ${inputs.A02_Vehicle_Manufacture_Year ?? "-"}
+
+──────────────────────────────
+COVER DETAILS
+──────────────────────────────
+Cover Type:            ${inputs.C02_CoverType || "-"}
+Policy Start Date:     ${inputs.C01_Policy_Start_Date || "-"}
+Business Use:          ${inputs.C03_Business_Use === "Y" ? "Yes" : "No"}
+Voluntary Excess:      ${inputs.C05_Voluntary_Excess || "-"}
+NCD Discount:          ${inputs.B06_NCD_Discount != null ? inputs.B06_NCD_Discount + "%" : "-"}
+TP Limit:              ${inputs.C06_Limit1 || "-"}
+${inputs.C04_Discount_Code ? `Discount Code:         ${inputs.C04_Discount_Code}` : ""}
+
+──────────────────────────────
+ADD-ONS SELECTED
+──────────────────────────────
+${addonsSelected.length > 0 ? addonsSelected.map(a => `• ${a}`).join("\n") : "None selected"}
+
+──────────────────────────────
+PREMIUM BREAKDOWN
+──────────────────────────────
+Gross Premium (pre-discount): $${fmtCurrency(o.B01_Gross_Prem_before_discount)}
+Gross Premium:                $${fmtCurrency(o.B02_Gross_Prem)}
+Tax:                          $${fmtCurrency(o.B03_Tax)}
+Commission:                   $${fmtCurrency(o.B04_Commission)}
+────────────────────────────
+TOTAL PREMIUM:                $${fmtCurrency(o.B05_Total_Premium)}
+
+Underwriting Status:   ${o.A01_Quote || "-"}${o.A02_Quote_Reason && o.A02_Quote_Reason !== "Nil" ? ` (${o.A02_Quote_Reason})` : ""}
+${o.C01_Discount_Code_Chk && o.C01_Discount_Code_Chk !== "NoCode" ? `Discount Applied:      ${o.C01_Discount_Code_Chk}` : ""}
+
+──────────────────────────────
+This quotation is valid for 30 days from the date of issue and is subject to final underwriting review. For queries, please contact your account manager.
+
+Reference ID: ${fr.meta?.call_id || "-"}
+Generated via Coherent Spark Motor Rating Model v${fr.meta?.version || "-"}`;
+  };
+
+  // ── Send email (mailto fallback — real send requires backend) ──
+  const handleSendEmail = async () => {
+    if (!emailTo) return;
+    setEmailSending(true);
+    await new Promise(r => setTimeout(r, 1200)); // simulate send delay
+    const body = buildEmailBody(finalResult);
+    const mailtoLink = `mailto:${encodeURIComponent(emailTo)}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(body)}`;
+    window.open(mailtoLink, "_blank");
+    setEmailSending(false);
+    setEmailSent(true);
+  };
+
+
   const vehicleFields   = ["A01_Vehicle_Group", "A02_Vehicle_Manufacture_Year"];
   const policyFields    = ["B01_PH_DOB", "B02_Additional_Driver_DOB", "B03_PH_Gender", "B04_Additional_Driver_Gender", "B05_Home_Address", "B06_NCD_Discount", "B07_Historical_Claims"];
   const coverFields     = ["C01_Policy_Start_Date", "C02_CoverType", "C03_Business_Use", "C04_Discount_Code", "C05_Voluntary_Excess", "C06_Limit1", "C07_Limit2", "C08_Limit3"];
@@ -850,7 +1170,7 @@ export default function MotorRatingApp() {
                   onClick={handleQuote}
                   disabled={quoting || validationLoading}
                 >
-                  {quoting ? <><div className="spinner" /> Calculating...</> : "Calculate Premium"}
+                  {quoting ? <><div className="spinner" /> Getting quote...</> : "Get Quote"}
                 </button>
 
                 {quoteError && (
@@ -862,7 +1182,7 @@ export default function MotorRatingApp() {
                 {!result && !quoteError && (
                   <div className="placeholder-state">
                     <div className="placeholder-icon">📊</div>
-                    <div className="placeholder-text">Fill in the form and click calculate to get a live premium from Spark.</div>
+                    <div className="placeholder-text">Fill in the form and click Get Quote to receive a live premium from Spark.</div>
                   </div>
                 )}
 
@@ -930,6 +1250,17 @@ export default function MotorRatingApp() {
                         <span className="meta-val">{result.meta?.version_id?.substring(0,8)}...</span>
                       </div>
                     </div>
+
+                    <button
+                      className="final-btn"
+                      onClick={handleFinalQuotation}
+                      disabled={finalQuoting || quoting}
+                    >
+                      {finalQuoting
+                        ? <><div className="spinner" style={{borderTopColor:"#4ade80"}} /> Preparing...</>
+                        : <>📄 Final Quotation</>}
+                    </button>
+                    {finalQuoting && <p className="final-loading-note">Re-calling Spark with call_purpose = Final Quotations...</p>}
                   </>
                 )}
               </div>
@@ -937,6 +1268,72 @@ export default function MotorRatingApp() {
           </div>
         </div>
       </div>
+
+      {/* Final Quotation Email Modal */}
+      {showModal && (
+        <div className="modal-overlay" onClick={e => { if (e.target === e.currentTarget) { setShowModal(false); } }}>
+          <div className="modal">
+            <div className="modal-header">
+              <div className="modal-header-text">
+                <div className="modal-title">Final Quotation</div>
+                <div className="modal-subtitle">
+                  {emailSent
+                    ? "Your email client has been opened with the quotation."
+                    : "Enter recipient details to send this quotation by email."}
+                </div>
+              </div>
+              <button className="modal-close" onClick={() => setShowModal(false)} aria-label="Close modal">✕</button>
+            </div>
+
+            {emailSent ? (
+              <div className="modal-success">
+                <div className="modal-success-icon">✉️</div>
+                <div className="modal-success-title">Email ready to send</div>
+                <div className="modal-success-text">
+                  Your default email client has been opened with the quotation pre-filled.<br />
+                  Ref: {finalResult?.meta?.call_id?.substring(0, 8).toUpperCase()}
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="modal-body">
+                  <div className="modal-field">
+                    <label className="modal-label">Recipient email address</label>
+                    <input
+                      type="email"
+                      placeholder="e.g. client@example.com"
+                      value={emailTo}
+                      onChange={e => setEmailTo(e.target.value)}
+                    />
+                  </div>
+                  <div className="modal-field">
+                    <label className="modal-label">Subject</label>
+                    <input
+                      type="text"
+                      value={emailSubject}
+                      onChange={e => setEmailSubject(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <div className="modal-preview-label">Email body preview</div>
+                    <div className="modal-preview">{buildEmailBody(finalResult)}</div>
+                  </div>
+                </div>
+                <div className="modal-footer">
+                  <button className="modal-cancel-btn" onClick={() => setShowModal(false)}>Close</button>
+                  <button
+                    className="modal-send-btn"
+                    onClick={handleSendEmail}
+                    disabled={!emailTo || emailSending}
+                  >
+                    {emailSending ? <><div className="spinner" /> Preparing...</> : <>✉ Send Quotation</>}
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </>
   );
 }
