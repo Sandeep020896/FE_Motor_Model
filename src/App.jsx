@@ -1336,4 +1336,4 @@ Generated via Coherent Spark Motor Rating Model v${fr.meta?.version || "-"}`;
       )}
     </>
   );
-}
+} 
